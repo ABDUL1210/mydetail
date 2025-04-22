@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Card</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: background 0.4s;
+    }
+
+    #main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    .card h2 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .card a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+    }
+
+    .card.dark-mode {
+      background: #2c3e50;
+      color: #fff;
+    }
+
+    .card.dark-mode a {
+      color: #1abc9c;
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <div class="card" id="profile-card">
+      <h2>👤 Abdul Mazid</h2>
+      <p>📧 Email: <a href="mailto:abdulmazid.samad@gmail.com">abdulmazid.samad@gmail.com</a></p>
+    </div>
+    <button id="toggle-theme">Toggle Dark Mode</button>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-theme');
+    const body = document.body;
+    const card = document.getElementById('profile-card');
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      card.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
